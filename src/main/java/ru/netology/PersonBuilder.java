@@ -19,6 +19,9 @@ public class PersonBuilder {
     }
 
     public PersonBuilder setAge(int age) {
+        if (age > 100 || age < 0) {
+            throw new IllegalArgumentException("Возраст недопустимый");
+        }
         this.age = age;
         return this;
     }
@@ -29,11 +32,8 @@ public class PersonBuilder {
     }
 
     public Person build() throws IllegalArgumentException {
-        if (age > 100 || age < 0){
-            throw new IllegalArgumentException("Возраст недопустимый");
-        }
-        if (name == null || surname == null) {
-            throw new IllegalArgumentException("Не хватает обяхательных полей");
+        if (name == null  || surname == null || name.isEmpty() || surname.isEmpty()) {
+            throw new IllegalStateException("Не хватает обязательных полей");
         }
         return new Person(name, surname, age, address);
     }

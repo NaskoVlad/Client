@@ -19,7 +19,7 @@ public class Main {
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }
-        
+
         try {
             // Возраст недопустимый
             new PersonBuilder().setAge(-100).build();

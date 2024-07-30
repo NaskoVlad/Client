@@ -9,7 +9,6 @@ public class Person {
     protected final String surname;
     protected int age;
     protected String address;
-    Optional<Integer> user = Optional.of(age);
 
     public Person(String name, String surname, int age, String address) {
         this.name = name;
@@ -20,7 +19,7 @@ public class Person {
     }
 
     public boolean hasAge() {
-        return user.isPresent();
+        return Optional.of(age).isPresent(); // Проверяем есть ли данные по возрасту у нашего человека
     }
 
     public boolean hasAddress() {
@@ -40,7 +39,7 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        return OptionalInt.of(user.get());
+        return OptionalInt.of(Optional.of(age).get());
     }
 
     public String getAddress() {
