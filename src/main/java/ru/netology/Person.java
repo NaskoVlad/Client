@@ -18,8 +18,9 @@ public class Person {
 
     }
 
+
     public boolean hasAge() {
-        return Optional.of(age).isPresent(); // Проверяем есть ли данные по возрасту у нашего человека
+        return age != -1; // Проверяем есть ли данные по возрасту у нашего человека
     }
 
     public boolean hasAddress() {
@@ -39,7 +40,12 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        return OptionalInt.of(Optional.of(age).get());
+        if(!hasAge()){
+            return null;
+        }
+        else {
+            return OptionalInt.of(Optional.of(age).get());
+        }
     }
 
     public String getAddress() {

@@ -3,7 +3,7 @@ package ru.netology;
 public class PersonBuilder {
     private String name;
     private String surname;
-    private int age;
+    private int age = -1;
     private String address;
 
     //...
