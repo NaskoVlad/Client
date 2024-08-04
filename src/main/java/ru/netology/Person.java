@@ -15,9 +15,7 @@ public class Person {
         this.surname = surname;
         this.age = age;
         this.address = address;
-
     }
-
 
     public boolean hasAge() {
         return age != -1; // Проверяем есть ли данные по возрасту у нашего человека
@@ -40,10 +38,9 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        if(!hasAge()){
+        if (!hasAge()) {
             return null;
-        }
-        else {
+        } else {
             return OptionalInt.of(Optional.of(age).get());
         }
     }
@@ -79,6 +76,5 @@ public class Person {
 
     public PersonBuilder newChildBuilder() {
         return new PersonBuilder().setSurname(surname).setAddress(address);
-
     }
 }

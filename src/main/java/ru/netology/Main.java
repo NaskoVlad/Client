@@ -6,11 +6,11 @@ public class Main {
                 .setName("Анна")
                 .setSurname("Вольф")
                 .setAge(31)
-
                 .build();
         Person son = mom.newChildBuilder()
                 .setName("Антошка")
                 .build();
+        mom.happyBirthday();
         System.out.println("У " + mom + " есть сын, " + son);
         System.out.println(mom.hasAge());
         System.out.println(mom.getAge());
