@@ -7,7 +7,7 @@ import java.util.OptionalInt;
 public class Person {
     protected final String name;
     protected final String surname;
-    protected int age;
+    protected Integer age;
     protected String address;
 
     public Person(String name, String surname, int age, String address) {
@@ -38,11 +38,7 @@ public class Person {
     }
 
     public OptionalInt getAge() {
-        if (!hasAge()) {
-            return null;
-        } else {
-            return OptionalInt.of(Optional.of(age).get());
-        }
+        return OptionalInt.of(age);
     }
 
     public String getAddress() {

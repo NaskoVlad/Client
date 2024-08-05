@@ -32,7 +32,8 @@ public class PersonBuilder {
     public Person build() throws IllegalArgumentException {
         if (name == null || surname == null || name.isEmpty() || surname.isEmpty()) {
             throw new IllegalStateException("Не хватает обязательных полей");
+        } else {
+            return new Person(name, surname, age, address);
         }
-        return new Person(name, surname, age, address);
     }
 }

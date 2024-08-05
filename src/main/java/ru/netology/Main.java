@@ -5,6 +5,7 @@ public class Main {
         Person mom = new PersonBuilder()
                 .setName("Анна")
                 .setSurname("Вольф")
+                .setAddress("Сидней")
                 .setAge(31)
                 .build();
         Person son = mom.newChildBuilder()
@@ -12,8 +13,9 @@ public class Main {
                 .build();
         mom.happyBirthday();
         System.out.println("У " + mom + " есть сын, " + son);
-        System.out.println(mom.hasAge());
+        System.out.println(son.hasAge());
         System.out.println(mom.getAge());
+        System.out.println(son.getAge());
 
         try {
             // Не хватает обяхательных полей
